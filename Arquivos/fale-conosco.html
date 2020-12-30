@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Tudo Sobre Google Glass</title>
+    <link rel="stylesheet" href="_css/estilo.css" />
+    <link rel="stylesheet" href="_css/form.css" />
+    <script src="_javascript/funcoes.js"></script>
+    <script>
+        function calc_total() {
+            var qtd = parseInt(document.getElementById('cQtd').value);
+            var tot = qtd * 1500;
+            document.getElementById('cTot').value = tot;
+        }
+    </script>
+</head>
+
+
+<body>
+    <div id="interface">
+        <header id="cabecalho">
+
+            <hgroup>
+                <h1>Google Glass</h1>
+                <h2>A revolução do Google está chegando
+                </h2>
+            </hgroup>
+            <img id="icone" src="_imagens/contato.png">
+            <nav id="menu">
+                <h1>Menu Principal</h1>
+                <ul type="disc">
+                    <li onmouseover="mudaFoto('_imagens/home.png')" onmouseout="mudaFoto('_imagens/contato.png')"><a href="index.html">Home</a></li>
+                    <li onmouseover="mudaFoto('_imagens/especificacoes.png')" onmouseout="mudaFoto('_imagens/contato.png')"><a href="specs.html">Especificações</a></li>
+                    <li onmouseover="mudaFoto('_imagens/fotos.png')" onmouseout="mudaFoto('_imagens/contato.png')"><a href="fotos.html">Fotos</a></li>
+                    <li onmouseover="mudaFoto('_imagens/multimidia.png')" onmouseout="mudaFoto('_imagens/contato.png')"><a href="multimidia.html">Multimídia</a></li>
+                    <li onmouseover="mudaFoto('_imagens/contato.png')" onmouseout="mudaFoto('_imagens/contato.png')"><a href="fale-conosco.html">Fale conosco</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <section id="corpo-full">
+            <article id="noticia-principal">
+                <header id="cabecalho-artigo">
+                    <hgroupe>
+                        <h3>Fale Conosco > Contato</h3>
+                        <h1>Formulário de Contato</h1>
+                        <h2>por Pablo Costa</h2>
+                        <h3 class="direita">Atualizado em 27/Abril/2020</h3>
+                    </hgroupe>
+                </header>
+
+                <form method="POST" id="fContato" action="mailto:contato@pcprojetos.com" oninput="calc_total();">
+                    <fieldset id="usuario">
+                        <legend> Identificação do Usuário</legend>
+                        <p><label for="cNome">Nome:</label> <input type="text" name="tNome" id="cNome" size="20" maxlength="30" placeholder="Nome Completo" /> </p>
+                        <p><label for="cSenha">Senha:</label> <input type="password" name="tSenha" id="cSenha" size="8" maxlength="8" placeholder="8 digitos"> </p>
+                        <p><label for="cMail">E-mail:</label> <input type="email" name="tMail" id="cMail" size="20" maxlength="40" placeholder="Ex.: usuario@servidor.com"></p>
+                        <fieldset id="sexo">
+                            <legend> Sexo:</legend>
+                            <input type="radio" name="tSexo" id="cMasc"> <label for="cMasc">Masculino</label>
+                            <input type="radio" name="tSexo" id="cFem"> <label for="cFem">Feminino</label></fieldset>
+                        <p><label for="cNasc">Data de Nascimento:</label> <input type="date" name="tNasc" id="cNasc"> </p>
+                    </fieldset>
+
+                    <fieldset id="endereco">
+                        <legend> Endereço do Usuário</legend>
+                        <p><label for="cRua">Logradouro:</label> <input type="text" name="tRua" id="cRua" size="13" maxlength="80" placeholder="Rua, Avenida, Travessa, Praça"> </p>
+                        <p><label for="cNum">Número:</label> <input type="number" name="tNum" id="cNum" min="1" max="30000"> </p>
+                        <p><label for="cEst">Estado:</label>
+                            <select name="tEst" id="cEst">
+                                <option value="0">Selecione o Estado</option>
+                                <option value="DF">Distrito Federal</option>
+                   <optgroup label="Norte">
+                                <option value="AM">Amazonas</option>
+                                <option value="RR">Roraima</option>
+                                <option value="AP">Amapá</option>
+                                <option value="PA">Pará</option>
+                                <option value="TO">Tocantins</option>
+                                <option value="RO">Rondônia</option>
+                                <option value="AC">Acre</option>
+                   </optgroup>
+                   <optgroup label="Nordeste">
+                                <option value="MA">Maranhão</option>
+                                <option value="PI">Piauí</option>
+                                <option value="CE">Ceará</option>
+                                <option value="RN">Rio Grande do Norte</option>
+                                <option value="PE">Pernambuco</option>
+                                <option value="PB">Paraíba</option>
+                                <option value="SE">Sergipe</option>
+                                <option value="AL">Alagoas</option>
+                                <option value="BA">Bahia</option>
+                   </optgroup>
+                   <optgroup label="Centro-Oeste">
+                                <option value="GO">Goiás</option>
+                                <option value="MS">Mato Grosso do Sul</option>
+                                <option value="MT">Mato Grosso</option>
+                   </optgroup>
+                   <optgroup label="Sudeste">
+                                <option value="SP">São Paulo</option>
+                                <option value="RJ">Rio de Janeiro</option>
+                                <option value="MG">Minas Gerais</option>
+                                <option value="ES">Espirito Santo</option>
+                   </optgroup>
+                   <optgroup label="Sul">
+                                <option value="PR">Paraná</option>
+                                <option value="RS">Rio Grande do Sul</option>
+                                <option value="SC">Santa Catarina</option>
+                   </optgroup>
+                        
+                        </select></p>
+
+                        <p><label for="cCid">Cidade:</label>
+                            <input type="text" name="tCid" id="cCid" maxlength="40" size="18" placeholder="Sua Cidade" list="cidades">
+                            <datalist id="cidades">
+                                <option value="Rio Branco"></option>
+                        <option value="Maceió"></option>
+                        <option value="Macapá"></option>
+                        <option value="Manaus"></option>
+                        <option value="Salvador"></option>
+                        <option value="Fortaleza"></option>
+                        <option value="Brasília"></option>
+                        <option value="Vitória"></option>
+                        <option value="Goiânia"></option>
+                        <option value="São Luís"></option>
+                        <option value="Cuiabá"></option>
+                        <option value="Campo Grande"></option>
+                        <option value="Belo Horizonte"></option>
+                        <option value="Belém"></option>
+                        <option value="João Pessoa"></option>
+                        <option value="Curitiba"></option>
+                        <option value="Recife"></option>
+                        <option value="Teresina"></option>
+                        <option value="Rio de Janeiro"></option>
+                        <option value="Natal"></option>
+                        <option value="Porto Alegre"></option>
+                        <option value="Porto Velho"></option>
+                        <option value="Boa Vista"></option>
+                        <option value="Florianópolis"></option>
+                        <option value="São Paulo"></option>
+                        <option value="Aracaju"></option>
+                        <option value="Palmas"></option>
+                            </datalist>
+
+                        </p>
+                        </select>
+
+
+
+                    </fieldset>
+
+                    <fieldset id="mensagem">
+                        <legend> Mensagem do Usuário</legend>
+                        <p><label for="cUrg">Grau de Urgência:</label> Mín
+                            <input type="range" name="tUrg" id="cUrg" min="0" max="10" step="2">Máx</p>
+                        <p><label for="cMsg">Mensagem:</label>
+                            <textarea name="tMsg" id="cMsg" cols="35" rows="5" placeholder="Deixe aqui sua mensagem"></textarea></p>
+                    </fieldset>
+
+                    <fieldset id="pedido">
+                        <legend> Quero um Google Glass</legend>
+                        <p><input type="checkbox" name="tPed" id="cPed" checked>
+                            <label for="cPed">Gostaria de adquirir um Google Glass quando disponível</label></p>
+                        <p><label for="cCor">Cor:</label>
+                            <input type="color" name="tCor" id="cCor" value="#0000FF"></p>
+                        <p><label for="cQtd">Quantidade:</label>
+                            <input type="number" name="tQtd" id="cQtd" min="1" max="10" value="1"></p>
+                        <p><label for="cTot">Preço Total: R$</label>
+                            <input type="text" name="tTot" id="cTot" placeholder="Total a pagar" readonly></p>
+                    </fieldset>
+
+                    <input type="submit" name="tEnv" id="cEnv" value="Enviar">
+
+                </form>
+
+                <footer id="rodape">
+                    <p>Copyright &copy; 2020 - by Pablo Costa <br/>
+                        <a href="https://facebook.com" target="_blank"> Facebook</a> |
+                        <a href="https://twitter.com" target="_blank"> Twitter</a></p>
+                </footer>
+            </article>
+        </section>
+    </div>
+</body>
+
+</html>
